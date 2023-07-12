@@ -1,0 +1,5 @@
+- VPC: https://eu-west-3.console.aws.amazon.com/vpc/home?region=eu-west-3#vpcs:
+- Ec2: https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Instances:sort=instanceId
+- STACK: https://eu-west-3.console.aws.amazon.com/cloudformation/home?region=eu-west-3#/stacks?filteringText=&filteringStatus=active&viewNested=true
+- CLUSTER: https://eu-west-3.console.aws.amazon.com/docdb/home?region%25253Deu-west-3#clusters
+- [All](https://eu-west-3.console.aws.amazon.com/vpc/home?region%253Deu-west-3#Home%253A)
