@@ -24,7 +24,7 @@ const docToInsert = {
     creation_at: new Date(),
 
 }
-console.log('inserting:',{docToInsert});
+console.log('inserting:', { docToInsert });
 
 console.time('write to cluster endpoint');
 let doc = await collection.insertOne(docToInsert);
@@ -43,7 +43,7 @@ console.log("Connected to MongoDB replica");
 const collectionReplica = clientReplica.db(DB).collection(COLLECTION);
 
 console.time('read from replica endpoint');
-let docsReplica = await collectionReplica.find({_id: doc.insertedId}).toArray();
+let docsReplica = await collectionReplica.find({ _id: doc.insertedId }).toArray();
 console.timeEnd('read from replica endpoint');
 console.log(docsReplica);
 
