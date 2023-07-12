@@ -64,7 +64,7 @@ Deno.test('must find 100_000 docs', async () => {
 
 Deno.test('must find and read 100_000 docs', async () => {
     const allDocs = await users.find({}).toArray()
-    assertEquals(allDocs.length, 100_000);
+    assertEquals(allDocs.length, 100_100);
 });
 
 

@@ -18,40 +18,24 @@ const PASS = '9876ASadsasASDASDghfASD';
 const HOST = 'localhost';
 const PORT = 27017;
 
-const URLCluster = `mongodb://${USER}:${PASS}@${HOST}:${PORT}/?ssl=false&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1`
+// const URLCluster = `mongodb://${USER}:${PASS}@${HOST}:${PORT}/?ssl=false&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1`
 
 
-const client = new MongoClient();
-console.log("Connecting to MongoDB cluster");
-await client.connect(URLCluster);
-const users = await client.database("test").collection<UserSchema>("users")
-console.log("Connected to MongoDB cluster");
+// const client = new MongoClient();
+// console.log("Connecting to MongoDB cluster");
+// await client.connect(URLCluster);
+// const users = await client.database("test").collection<UserSchema>("users")
+// console.log("Connected to MongoDB cluster");
 
 
 
-// const URLReplicaLectura = `mongodb://${USER}:${PASS}@${HOST}:27018/?ssl=false&authMechanism=SCRAM-SHA-1&readPreference=secondary`
+const URLReplicaLectura = `mongodb://${USER}:${PASS}@${HOST}:${27018}/?ssl=false&retryWrites=false&authMechanism=SCRAM-SHA-1&directConnection=true`
 
-// const client2 = new MongoClient();
-// console.log("Connecting to MongoDB replica");
-// await client2.connect({
-//     db: 'test',
-//     tls: false,
-//     servers: [
-//         {
-//             host: 'localhost',
-//             port: 27018,
-//         },
-//     ],
-//     credential: {
-//         username: 'jperez',
-//         password: '9876ASadsasASDASDghfASD',
-//         db: 'test',
-//         mechanism: 'SCRAM-SHA-1',
-//     }
-
-// });
-// const usersReplica = await client2.database("test").collection<UserSchema>("users")
-// console.log("Connected to MongoDB replica");
+const client2 = new MongoClient();
+console.log("Connecting to MongoDB replica");
+await client2.connect(URLReplicaLectura);
+const usersReplica = await client2.database("test").collection<UserSchema>("users")
+console.log("Connected to MongoDB replica");
 
 
 // const username = `user_${Math.random()}`;

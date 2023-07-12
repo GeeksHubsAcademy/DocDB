@@ -19,3 +19,7 @@ forward-port-to-replica:
 
 conect-from-localhost:
 	mongosh --ssl --sslAllowInvalidHostnames  --host localhost:27017 --sslCAFile global-bundle.pem --username jperez --password 9876ASadsasASDASDghfASD --retryWrites false
+
+
+test:
+	deno test --allow-all
